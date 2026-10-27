@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrewTime 隐私政策</title>
+    <title>BrewTime Privacy Policy</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -14,6 +14,7 @@
             padding: 20px;
         }
         .container {
+            position: relative;
             max-width: 800px;
             margin: 0 auto;
             background: #fff;
@@ -71,89 +72,451 @@
             color: #999;
             font-size: 14px;
         }
+        .lang-switch {
+            position: absolute;
+            top: 46px;
+            right: 24px;
+            z-index: 5;
+        }
+        .lang-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: none;
+            border: none;
+            font-size: 15px;
+            color: #333;
+            cursor: pointer;
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+        .lang-btn:hover { background: #f5f5f5; }
+        .lang-btn svg { display: block; }
+        .lang-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 4px;
+            background: #fff;
+            border: 1px solid #e8e8e8;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            min-width: 150px;
+            padding: 6px;
+            display: none;
+            z-index: 10;
+        }
+        .lang-menu.open { display: block; }
+        .lang-menu a {
+            display: block;
+            padding: 8px 12px;
+            border-radius: 6px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .lang-menu a:hover { background: #f5f5f5; }
+        .lang-menu a.active { color: #6B4423; font-weight: 600; }
+        .content { display: none; }
+        .content.active { display: block; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>BrewTime 隐私政策</h1>
-        <p class="date">最后更新日期：2026年5月8日</p>
 
-        <h2>引言</h2>
-        <p>BrewTime（"我们"或"本应用"）尊重并保护所有用户的隐私。本隐私政策将帮助您了解我们在您使用本应用时如何收集、使用和保护您的信息。</p>
+        <div class="lang-switch">
+            <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+                <span id="langLabel">English</span>
+            </button>
+            <div class="lang-menu" id="langMenu">
+                <a href="?lang=en" data-lang="en">English</a>
+                <a href="?lang=zh-cn" data-lang="zh-cn">简体中文</a>
+                <a href="?lang=zh-hk" data-lang="zh-hk">繁體中文</a>
+                <a href="?lang=ja" data-lang="ja">日本語</a>
+            </div>
+        </div>
 
-        <h2>我们收集的信息</h2>
-        
-        <h3>您主动提供的信息</h3>
-        <ul>
-            <li><strong>咖啡记录</strong>：您添加的咖啡类型、日期、评分、照片、价格、产地等信息</li>
-            <li><strong>照片</strong>：您拍摄的咖啡照片或从相册选择的照片</li>
-        </ul>
+        <!-- ENGLISH (default) -->
+        <div class="content" data-lang="en">
+            <h1>BrewTime Privacy Policy</h1>
+            <p class="date">Last updated: May 8, 2026</p>
 
-        <h3>自动收集的信息</h3>
-        <ul>
-            <li><strong>设备信息</strong>：设备型号、iOS 版本（用于诊断兼容性问题）</li>
-            <li><strong>崩溃日志</strong>：应用崩溃时的技术日志（仅在您同意时通过 Apple 崩溃报告收集）</li>
-        </ul>
+            <h2>Introduction</h2>
+            <p>BrewTime ("we" or "the App") respects and protects your privacy. This policy explains how we collect, use, and protect your information when you use the App.</p>
 
-        <div class="highlight">
-            <h3>我们不收集的信息</h3>
+            <h2>Information We Collect</h2>
+
+            <h3>Information you provide</h3>
             <ul>
-                <li>我们不会收集您的姓名、邮箱、手机号等个人身份信息</li>
-                <li>我们不会跟踪您的位置信息</li>
-                <li>我们不会将您的数据出售给任何第三方</li>
+                <li><strong>Coffee records</strong>: drink type, date, rating, photo, price, origin, and other notes you add.</li>
+                <li><strong>Photos</strong>: coffee photos you take or select from your library.</li>
             </ul>
+
+            <h3>Information collected automatically</h3>
+            <ul>
+                <li><strong>Device info</strong>: device model and iOS version, used only for diagnosing compatibility issues.</li>
+                <li><strong>Crash logs</strong>: technical logs collected via Apple's crash reporting only when you agree.</li>
+            </ul>
+
+            <div class="highlight">
+                <h3>Information we do NOT collect</h3>
+                <ul>
+                    <li>We do not collect your name, email, phone number, or other identifying information.</li>
+                    <li>We do not track your location in the background.</li>
+                    <li>We do not sell your data to third parties.</li>
+                </ul>
+            </div>
+
+            <h2>Data Storage</h3>
+
+            <h3>Local storage</h3>
+            <p>All your coffee records and photos are stored on your device by default (using Apple SwiftData).</p>
+
+            <h3>iCloud sync (optional)</h3>
+            <p>If you enable iCloud sync, your data is synced across your devices through Apple iCloud. This process is handled entirely by Apple; as the developer, we cannot access your iCloud data.</p>
+
+            <h3>Photo access</h3>
+            <ul>
+                <li><strong>Camera</strong>: only used to take coffee photos.</li>
+                <li><strong>Photo Library</strong>: only used to select existing coffee photos.</li>
+                <li><strong>Photo Library write</strong>: only used to save share cards to your album.</li>
+            </ul>
+
+            <h2>Data Sharing</h2>
+            <p>We do not share your data with third parties, except:</p>
+            <ul>
+                <li>When you actively use system sharing (e.g. AirDrop, share sheet).</li>
+                <li>When required by law.</li>
+            </ul>
+
+            <h2>Data Security</h2>
+            <p>We use industry-standard measures to protect your data:</p>
+            <ul>
+                <li>Local data is protected by iOS system-level encryption.</li>
+                <li>iCloud sync data is protected by Apple iCloud security.</li>
+                <li>We do not transmit your data to our servers (we do not operate a server).</li>
+            </ul>
+
+            <h2>Your Rights</h2>
+            <ul>
+                <li><strong>Access & correction</strong>: view, edit, or delete your coffee records at any time.</li>
+                <li><strong>Deletion</strong>: uninstalling the App removes all local data.</li>
+                <li><strong>Export</strong>: use the in-app export to back up your data.</li>
+            </ul>
+
+            <h2>Children's Privacy</h2>
+            <p>The App does not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.</p>
+
+            <h2>Changes to This Policy</h2>
+            <p>We may update this policy from time to time. Changes will be posted on this page, and material changes will be notified in the App.</p>
+
+            <h2>Contact Us</h2>
+            <p>If you have any questions about this policy, please reach out via the App Store page or the in-app feedback feature.</p>
+
+            <div class="footer">
+                <p>The BrewTime Team</p>
+                <p>© 2026 BrewTime. All rights reserved.</p>
+            </div>
         </div>
 
-        <h2>数据存储</h2>
-        
-        <h3>本地存储</h3>
-        <p>您的所有咖啡记录和照片默认存储在您的设备本地（通过 Apple SwiftData 技术）。</p>
+        <!-- 简体中文 -->
+        <div class="content" data-lang="zh-cn">
+            <h1>BrewTime 隐私政策</h1>
+            <p class="date">最后更新日期：2026年5月8日</p>
 
-        <h3>iCloud 同步（可选）</h3>
-        <p>如果您开启了 iCloud 同步功能，您的数据会通过 Apple iCloud 服务在您的设备间同步。此过程完全由 Apple 的 iCloud 服务处理，我们作为开发者无法访问您的 iCloud 数据。</p>
+            <h2>引言</h2>
+            <p>BrewTime（"我们"或"本应用"）尊重并保护所有用户的隐私。本隐私政策将帮助您了解我们在您使用本应用时如何收集、使用和保护您的信息。</p>
 
-        <h3>照片访问</h3>
-        <ul>
-            <li><strong>相机权限</strong>：仅用于拍摄咖啡照片</li>
-            <li><strong>相册权限</strong>：仅用于选择已有的咖啡照片</li>
-            <li><strong>相册写入权限</strong>：仅用于保存分享卡片到相册</li>
-        </ul>
+            <h2>我们收集的信息</h2>
 
-        <h2>数据分享</h2>
-        <p>我们不会将您的任何数据分享给第三方，除非：</p>
-        <ul>
-            <li>您主动使用系统分享功能（如 AirDrop、微信分享等）</li>
-            <li>法律要求</li>
-        </ul>
+            <h3>您主动提供的信息</h3>
+            <ul>
+                <li><strong>咖啡记录</strong>：您添加的咖啡类型、日期、评分、照片、价格、产地等信息</li>
+                <li><strong>照片</strong>：您拍摄的咖啡照片或从相册选择的照片</li>
+            </ul>
 
-        <h2>数据安全</h2>
-        <p>我们采用行业标准的安全措施保护您的数据：</p>
-        <ul>
-            <li>本地数据使用 iOS 系统级的加密存储</li>
-            <li>iCloud 同步数据受 Apple iCloud 安全保护</li>
-            <li>不传输数据到我们的服务器（我们没有服务器）</li>
-        </ul>
+            <h3>自动收集的信息</h3>
+            <ul>
+                <li><strong>设备信息</strong>：设备型号、iOS 版本（用于诊断兼容性问题）</li>
+                <li><strong>崩溃日志</strong>：应用崩溃时的技术日志（仅在您同意时通过 Apple 崩溃报告收集）</li>
+            </ul>
 
-        <h2>您的权利</h2>
-        <ul>
-            <li><strong>访问和更正</strong>：您可以随时查看、编辑或删除您的咖啡记录</li>
-            <li><strong>删除数据</strong>：卸载应用将删除所有本地数据</li>
-            <li><strong>导出数据</strong>：您可以通过应用内的导出功能备份您的数据</li>
-        </ul>
+            <div class="highlight">
+                <h3>我们不收集的信息</h3>
+                <ul>
+                    <li>我们不会收集您的姓名、邮箱、手机号等个人身份信息</li>
+                    <li>我们不会在后台持续追踪您的位置信息</li>
+                    <li>我们不会将您的数据出售给任何第三方</li>
+                </ul>
+            </div>
 
-        <h2>儿童隐私</h2>
-        <p>本应用不涉及收集13岁以下儿童的个人信息。如果您是父母或监护人，发现您的孩子向我们提供了个人信息，请联系我们。</p>
+            <h2>数据存储</h2>
 
-        <h2>隐私政策的变更</h2>
-        <p>我们可能会不时更新本隐私政策。任何变更将在本页面公布，重大变更会通过应用内通知告知您。</p>
+            <h3>本地存储</h3>
+            <p>您的所有咖啡记录和照片默认存储在您的设备本地（通过 Apple SwiftData 技术）。</p>
 
-        <h2>联系我们</h2>
-        <p>如果您对本隐私政策有任何疑问，请通过 App Store 页面或应用内的反馈功能联系我们。</p>
+            <h3>iCloud 同步（可选）</h3>
+            <p>如果您开启了 iCloud 同步功能，您的数据会通过 Apple iCloud 服务在您的设备间同步。此过程完全由 Apple 的 iCloud 服务处理，我们作为开发者无法访问您的 iCloud 数据。</p>
 
-        <div class="footer">
-            <p>BrewTime 团队</p>
-            <p>© 2026 BrewTime. All rights reserved.</p>
+            <h3>照片访问</h3>
+            <ul>
+                <li><strong>相机权限</strong>：仅用于拍摄咖啡照片</li>
+                <li><strong>相册权限</strong>：仅用于选择已有的咖啡照片</li>
+                <li><strong>相册写入权限</strong>：仅用于保存分享卡片到相册</li>
+            </ul>
+
+            <h2>数据分享</h2>
+            <p>我们不会将您的任何数据分享给第三方，除非：</p>
+            <ul>
+                <li>您主动使用系统分享功能（如 AirDrop、微信分享等）</li>
+                <li>法律要求</li>
+            </ul>
+
+            <h2>数据安全</h2>
+            <p>我们采用行业标准的安全措施保护您的数据：</p>
+            <ul>
+                <li>本地数据使用 iOS 系统级的加密存储</li>
+                <li>iCloud 同步数据受 Apple iCloud 安全保护</li>
+                <li>不传输数据到我们的服务器（我们没有服务器）</li>
+            </ul>
+
+            <h2>您的权利</h2>
+            <ul>
+                <li><strong>访问和更正</strong>：您可以随时查看、编辑或删除您的咖啡记录</li>
+                <li><strong>删除数据</strong>：卸载应用将删除所有本地数据</li>
+                <li><strong>导出数据</strong>：您可以通过应用内的导出功能备份您的数据</li>
+            </ul>
+
+            <h2>儿童隐私</h2>
+            <p>本应用不涉及收集13岁以下儿童的个人信息。如果您是父母或监护人，发现您的孩子向我们提供了个人信息，请联系我们。</p>
+
+            <h2>隐私政策的变更</h2>
+            <p>我们可能会不时更新本隐私政策。任何变更将在本页面公布，重大变更会通过应用内通知告知您。</p>
+
+            <h2>联系我们</h2>
+            <p>如果您对本隐私政策有任何疑问，请通过 App Store 页面或应用内的反馈功能联系我们。</p>
+
+            <div class="footer">
+                <p>BrewTime 团队</p>
+                <p>© 2026 BrewTime. All rights reserved.</p>
+            </div>
         </div>
+
+        <!-- 繁體中文（香港/台灣） -->
+        <div class="content" data-lang="zh-hk">
+            <h1>BrewTime 隱私權政策</h1>
+            <p class="date">最後更新日期：2026年5月8日</p>
+
+            <h2>簡介</h2>
+            <p>BrewTime（「我們」或「本應用程式」）尊重並保護所有使用者的隱私。本政策說明您使用本應用程式時，我們如何收集、使用並保護您的資訊。</p>
+
+            <h2>我們收集的資訊</h2>
+
+            <h3>您主動提供的資訊</h3>
+            <ul>
+                <li><strong>咖啡記錄</strong>：您新增的咖啡類型、日期、評分、照片、價格、產地等資訊</li>
+                <li><strong>照片</strong>：您拍攝的咖啡照片或從相簿選取的照片</li>
+            </ul>
+
+            <h3>自動收集的資訊</h3>
+            <ul>
+                <li><strong>裝置資訊</strong>：裝置型號與 iOS 版本（僅用於診斷相容性問題）</li>
+                <li><strong>當機紀錄</strong>：應用程式當機時的技術紀錄（僅在您同意時經由 Apple 當機回報收集）</li>
+            </ul>
+
+            <div class="highlight">
+                <h3>我們不收集的資訊</h3>
+                <ul>
+                    <li>我們不會收集您的姓名、電子郵件、電話號碼等個人身分識別資訊</li>
+                    <li>我們不會在背景持續追蹤您的位置資訊</li>
+                    <li>我們不會將您的資料出售給任何第三方</li>
+                </ul>
+            </div>
+
+            <h2>資料儲存</h2>
+
+            <h3>本機儲存</h3>
+            <p>您所有的咖啡記錄與照片預設儲存在您的裝置本機（使用 Apple SwiftData 技術）。</p>
+
+            <h3>iCloud 同步（選擇性）</h3>
+            <p>若您開啟 iCloud 同步，您的資料會透過 Apple iCloud 在您的裝置之間同步。此過程完全由 Apple iCloud 處理，做為開發者，我們無法存取您的 iCloud 資料。</p>
+
+            <h3>照片存取</h3>
+            <ul>
+                <li><strong>相機權限</strong>：僅用於拍攝咖啡照片</li>
+                <li><strong>照片圖庫權限</strong>：僅用於選取既有的咖啡照片</li>
+                <li><strong>寫入照片圖庫權限</strong>：僅用於將分享卡片儲存到相簿</li>
+            </ul>
+
+            <h2>資料分享</h2>
+            <p>我們不會與第三方分享您的資料，除非：</p>
+            <ul>
+                <li>您主動使用系統分享功能（例如 AirDrop、分享面板）</li>
+                <li>法律要求</li>
+            </ul>
+
+            <h2>資料安全</h2>
+            <p>我們採用業界標準的安全措施保護您的資料：</p>
+            <ul>
+                <li>本機資料受 iOS 系統層級加密保護</li>
+                <li>iCloud 同步資料受 Apple iCloud 安全保護</li>
+                <li>我們不會將您的資料傳輸至我們的伺服器（我們沒有伺服器）</li>
+            </ul>
+
+            <h2>您的權利</h2>
+            <ul>
+                <li><strong>存取與更正</strong>：您可以隨時檢視、編輯或刪除您的咖啡記錄</li>
+                <li><strong>刪除資料</strong>：解除安裝應用程式將刪除所有本機資料</li>
+                <li><strong>匯出資料</strong>：您可以使用應用程式內的匯出功能備份您的資料</li>
+            </ul>
+
+            <h2>兒童隱私權</h2>
+            <p>本應用程式不會刻意收集 13 歲以下兒童的個人資訊。若您是家長或監護人，發現您的孩子提供了個人資訊給我們，請與我們聯絡。</p>
+
+            <h2>政策變更</h2>
+            <p>我們可能會不定期更新本政策。變更將公布於本頁面，重大變更會於應用程式內通知您。</p>
+
+            <h2>聯絡我們</h2>
+            <p>若您對本政策有任何疑問，請透過 App Store 頁面或應用程式內的意見回饋功能聯絡我們。</p>
+
+            <div class="footer">
+                <p>BrewTime 團隊</p>
+                <p>© 2026 BrewTime. All rights reserved.</p>
+            </div>
+        </div>
+
+        <!-- 日本語 -->
+        <div class="content" data-lang="ja">
+            <h1>BrewTime プライバシーポリシー</h1>
+            <p class="date">最終更新日：2026年5月8日</p>
+
+            <h2>はじめに</h2>
+            <p>BrewTime（「当社」または「本アプリ」）は、すべてのユーザーのプライバシーを尊重し保護します。本ポリシーは、本アプリ利用時における情報の収集・利用・保護方法について説明します。</p>
+
+            <h2>収集する情報</h2>
+
+            <h3>ユーザーが提供する情報</h3>
+            <ul>
+                <li><strong>コーヒー記録</strong>：飲み物の種類、日時、評価、写真、価格、産地など、ユーザーが追加する情報</li>
+                <li><strong>写真</strong>：ユーザーが撮影またはライブラリから選択したコーヒー写真</li>
+            </ul>
+
+            <h3>自動収集される情報</h3>
+            <ul>
+                <li><strong>デバイス情報</strong>：機種と iOS バージョン（互換性の問題の診断にのみ使用）</li>
+                <li><strong>クラッシュログ</strong>：アプリクラッシュ時の技術ログ（同意いただいた場合に Apple のクラッシュレポート経由でのみ収集）</li>
+            </ul>
+
+            <div class="highlight">
+                <h3>収集しない情報</h3>
+                <ul>
+                    <li>お名前、メールアドレス、電話番号などの個人を特定する情報は収集しません</li>
+                    <li>バックグラウンドで位置情報を追跡することはありません</li>
+                    <li>データを第三者に販売することはありません</li>
+                </ul>
+            </div>
+
+            <h2>データの保存</h2>
+
+            <h3>ローカル保存</h3>
+            <p>すべてのコーヒー記録と写真は、デフォルトでユーザーのデバイスに保存されます（Apple SwiftData を使用）。</p>
+
+            <h3>iCloud 同期（オプション）</h3>
+            <p>iCloud 同期を有効にした場合、データは Apple iCloud 経由で複数デバイス間で同期されます。この処理はすべて Apple iCloud によって行われ、開発者である当社がユーザーの iCloud データにアクセスすることはありません。</p>
+
+            <h3>写真へのアクセス</h3>
+            <ul>
+                <li><strong>カメラ</strong>：コーヒー写真の撮影にのみ使用します</li>
+                <li><strong>フォトライブラリ</strong>：既存のコーヒー写真の選択にのみ使用します</li>
+                <li><strong>フォトライブラリ書き込み</strong>：シェアカードをアルバムに保存するためにのみ使用します</li>
+            </ul>
+
+            <h2>データの共有</h2>
+            <p>以下の場合を除き、データを第三者と共有することはありません。</p>
+            <ul>
+                <li>ユーザーがシステムの共有機能（AirDrop、共有シートなど）を積極的に使用した場合</li>
+                <li>法律で要求された場合</li>
+            </ul>
+
+            <h2>データのセキュリティ</h2>
+            <p>当社は業界標準の安全対策でデータを保護します：</p>
+            <ul>
+                <li>ローカルデータは iOS のシステムレベルの暗号化によって保護されます</li>
+                <li>iCloud 同期データは Apple iCloud のセキュリティによって保護されます</li>
+                <li>当社のサーバーにデータを送信することはありません（サーバーを運用していません）</li>
+            </ul>
+
+            <h2>ユーザーの権利</h2>
+            <ul>
+                <li><strong>閲覧・修正</strong>：コーヒー記録はいつでも閲覧・編集・削除できます</li>
+                <li><strong>削除</strong>：アプリをアンインストールすると、すべてのローカルデータが削除されます</li>
+                <li><strong>エクスポート</strong>：アプリ内のエクスポート機能でデータをバックアップできます</li>
+            </ul>
+
+            <h2>児童のプライバシー</h2>
+            <p>本アプリは、13 歳未満の児童から意図的に個人情報を収集することはありません。保護者の方がお子様の個人情報を当社に提供したと思われる場合は、ご連絡ください。</p>
+
+            <h2>ポリシーの変更</h2>
+            <p>本ポリシーは随時更新されることがあります。変更は本ページに掲載され、重要な変更はアプリ内でお知らせします。</p>
+
+            <h2>お問い合わせ</h2>
+            <p>本ポリシーに関するご質問は、App Store ページまたはアプリ内のフィードバック機能からご連絡ください。</p>
+
+            <div class="footer">
+                <p>BrewTime チーム</p>
+                <p>© 2026 BrewTime. All rights reserved.</p>
+            </div>
+        </div>
+
     </div>
+
+    <script>
+        (function() {
+            var LANG_LABELS = {
+                'en': 'English',
+                'zh-cn': '简体中文',
+                'zh-hk': '繁體中文',
+                'ja': '日本語'
+            };
+            function getLang() {
+                // 仅按 URL 参数决定，根路径默认英文
+                var params = new URLSearchParams(location.search);
+                var p = params.get('lang');
+                if (p && ['en','zh-cn','zh-hk','ja'].indexOf(p) !== -1) return p;
+                return 'en';
+            }
+            function show(lang) {
+                document.querySelectorAll('.content').forEach(function(el) {
+                    el.classList.toggle('active', el.dataset.lang === lang);
+                });
+                document.querySelectorAll('#langMenu a').forEach(function(a) {
+                    a.classList.toggle('active', a.dataset.lang === lang);
+                });
+                document.getElementById('langLabel').textContent = LANG_LABELS[lang];
+                document.documentElement.lang = lang;
+                var h1 = document.querySelector('.content[data-lang="' + lang + '"] h1');
+                if (h1) document.title = h1.textContent;
+            }
+            // 下拉菜单交互
+            var btn = document.getElementById('langBtn');
+            var menu = document.getElementById('langMenu');
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                menu.classList.toggle('open');
+                btn.setAttribute('aria-expanded', menu.classList.contains('open'));
+            });
+            document.addEventListener('click', function() {
+                menu.classList.remove('open');
+                btn.setAttribute('aria-expanded', 'false');
+            });
+            show(getLang());
+        })();
+    </script>
 </body>
 </html>
